@@ -1,5 +1,6 @@
 import React from "react";
 import { FaEye, FaStar } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
 	const {
@@ -10,6 +11,7 @@ const NewsCard = ({ news }) => {
 		total_view,
 		thumbnail_url,
 		details,
+        id,
 	} = news;
 
 	return (
@@ -43,9 +45,9 @@ const NewsCard = ({ news }) => {
 			{/* Details */}
 			<p className="text-gray-700 text-sm mb-3">
 				{details.slice(0, 200)}...
-				<span className="text-blue-500 font-medium cursor-pointer ml-1">
+				<Link to={`/news-details/${id}`} className="text-blue-500 font-medium cursor-pointer ml-1">
 					Read More
-				</span>
+				</Link>
 			</p>
 
 			{/* Footer Info */}
